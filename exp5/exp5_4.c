@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <string.h>
-#include <math.h>
 void main(void)
 {
     int n=0,m=0;//n行,m列
@@ -22,24 +20,19 @@ void main(void)
         for (k=0;k<m-1;k++)
         {
             //先找每一行的最大值
-            
             if(a[i][t+1]>a[i][t])
             {
                 t=k+1;
             }
-            
         }
-        
+        //找对应列数的最小值
         for (int v=0;v<n-1;v++)
         {
-            
             if(a[l][t]>a[l+1][t])
             {
                 l=v;
             }
-            
         }
-        
         if (a[i][t]==a[l][t])printf("%d %d\n",l,t);
     }
     
