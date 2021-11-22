@@ -1,5 +1,6 @@
 #include <stdio.h>
 int rounding(double a);//四舍五入函数声明
+void swap(int *p,int *q);//交换函数声明
 void main()
 {
     int stu_num=0;
@@ -26,6 +27,20 @@ void main()
             }
         }
     }
+    /*选择排序
+    for (int k=0;k<stu_num;k++)
+    {
+        int min=k;
+        for (int t=k+1;t<stu_num;t++)
+        {
+            if (mark[min]>mark[t])
+            {
+                min=t; 
+            }
+            swap(&mark[k],&mark[min]); 
+            
+        }
+    }*/
     int judge=1;
     for (int u=0;u<stu_num;u++)
     {
@@ -44,4 +59,12 @@ int rounding(double a)
     int b=0;
     b=(int)(a+0.5);//如果是1.6，+0.5变成2.1然后取整得2，如果是1.2，+0.5变成1.7取整得1
     return b;
+}
+
+
+void swap(int *p,int *q)
+{
+    int temp=*q;
+    *q=*p;
+    *p=temp;
 }

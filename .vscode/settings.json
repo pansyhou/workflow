@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "exp6_4.C": "cpp"
+        "exp6_4.C": "cpp",
+        "stdio.h": "c"
     }
 }

@@ -30,5 +30,4 @@ void main()
     {
         printf("%c出现%d次\n",i+97,alpha[i]);
     }
-
 }

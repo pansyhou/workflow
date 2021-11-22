@@ -28,5 +28,5 @@ int main()
         printf("NO");
     }
     else printf("YES");
-
+    return 0;
 }
