@@ -3,10 +3,11 @@
 #include <time.h>
 void main()
 {
-    int len=10;
+    srand((unsigned int)time(NULL));
+    int len=rand()%20;
     char a[len];
     int small_or_big=0;
-    srand((unsigned int)time(NULL));
+    
     for (int i=0;i<len;i++)//随机大小写
     {
         if (rand()%2==0)
@@ -17,7 +18,7 @@ void main()
         {
             small_or_big=96;
         }
-        a[i]=((char)small_or_big+rand()%26);
+        a[i]=((char)small_or_big+rand()%25);
     }
     printf("原英文字符串如下");
     for(int i=0;i<len;i++)
