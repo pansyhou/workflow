@@ -2,7 +2,7 @@
 #include <string.h>
 #define n 5  //为什麽要使用宏定义？便于更改一些变量时只需要在开头进行该动即可
 #define m 10 //而不需要，当你改便某个变量的数据后将整章文章都进行改动，反正宏定义十分好用希望大家也能早点爱上宏定义
-int main33333()
+int main()
 {
      int i = 0;
      char a[n][m];                 //定义一个2维数组对字符串进行储存
@@ -12,13 +12,14 @@ int main33333()
      for (i = 0; i < n; i++)
      {
           // printf("输入第%d个字符串：\n",i+1);
-          scanf("%s", *(a + i)); //对多个字符串的输入
-          b[i] = *(a + i);       //建立字符串与字符数组的联系
+          scanf("%s", (a + i)); //对多个字符串的输入
+          b[i] = *(a + i);
+          printf("%d",sizeof(*(a + i)));       //建立字符串与字符数组的联系
      }
      sort(b, n);
      for (i = 0; i < n; i++)
      {
-          printf("%s ", b[i]);
+          printf("%s ",b[i]);
      }
      return 0;
 }

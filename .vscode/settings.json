@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "exp6_4.C": "cpp",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "string.h": "c",
+        "limits": "c"
     }
 }

@@ -1,3 +1,10 @@
+/**
+ * @file    exp7_2.c
+ * @author  pansyhou
+ * @brief   有5名学生，每人有三门考试成绩（语文、数学、英语），
+ *          计算每个学生的平均成绩，查找有一门及以上课程不及格的学生，
+ *          输出不及格学生的课程成绩（含学号和三门课成绩和平均成绩）。
+ */
 #include <stdio.h>
 #define M 5
 void input(int i, int (*nums)[5]);

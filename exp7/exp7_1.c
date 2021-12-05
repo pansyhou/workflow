@@ -1,3 +1,10 @@
+/**
+ * @file    exp7_1.c
+ * @author  pansyhou
+ * @brief   从键盘输入10个整数（在main函数中完成这个功能），
+ *          求这10个整数的最大值和序号（要求编写一个以指针作为参数的函数来完成这个功能）。
+ *          然后在main函数中输出最大值和序号。
+ */
 #include <stdio.h>
 void main(void)
 {
