@@ -3,6 +3,8 @@
         "exp6_4.C": "cpp",
         "stdio.h": "c",
         "string.h": "c",
-        "limits": "c"
+        "limits": "c",
+        "typeinfo": "c",
+        "string_s.h": "c"
     }
 }

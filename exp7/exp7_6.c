@@ -20,7 +20,7 @@ void main()
     }
     for(int k=0;k<i;k++)                        //先用冒泡对所有身高进行排序
     {
-        for (int t=0;t<k-1;t++)
+        for (int t=0;t<i-1;t++)
         {
             if (height[t+1]>height[t])
             {

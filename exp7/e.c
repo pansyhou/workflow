@@ -1,9 +1,16 @@
+/**
+ * @file e.c
+ * @author pansyhou
+ * @brief  sdasdad
+
+ */
 #include <stdio.h>
 #include <string.h>
 #define n 5  //为什麽要使用宏定义？便于更改一些变量时只需要在开头进行该动即可
 #define m 10 //而不需要，当你改便某个变量的数据后将整章文章都进行改动，反正宏定义十分好用希望大家也能早点爱上宏定义
 int main()
 {
+     strcmp()
      int i = 0;
      char a[n][m];                 //定义一个2维数组对字符串进行储存
      char *b[n];                   //使用指针数组方便对字符串的排序

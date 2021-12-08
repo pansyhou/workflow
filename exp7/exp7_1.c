@@ -27,5 +27,4 @@ void main(void)
         }
     }
     printf("最大值=%d 序号=%d",max_num,max_mark+1);
-    //12 45 89 50 40 62 50 666 82 87
 }

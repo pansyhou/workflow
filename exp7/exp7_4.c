@@ -28,5 +28,6 @@ int main()
     scanf("%s",&str1);
     printf("请输入开始位置m=");
     scanf("%d",&m);
+    m++;
     strmcpy(s,p,m);
 }
