@@ -9,7 +9,6 @@ void strmcpy(char *s, char *p, int m)
     int s_Num = 0, p_Num = 0;
     m--;
     for (; s[s_Num] != '\0'; s_Num++);
-    for (; s[p_Num] != '\0'; p_Num++);
     int i=0;
     for (;m<= s_Num; m++,i++)
     {

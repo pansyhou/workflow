@@ -26,7 +26,7 @@ int strcmp(char *p1,char *p2)
 int main()
 {
     char a[]={"BOY"};
-    char b[]={"BAD"};
+    char b[]={"BOY"};
     char *p1=a,*p2=b;
     printf("%d",strcmp(p1,p2));
     return 0;
