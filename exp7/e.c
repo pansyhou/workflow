@@ -10,8 +10,7 @@
 #define m 10 //而不需要，当你改便某个变量的数据后将整章文章都进行改动，反正宏定义十分好用希望大家也能早点爱上宏定义
 int main()
 {
-     strcmp()
-     int i = 0;
+     strcmp() int i = 0;
      char a[n][m];                 //定义一个2维数组对字符串进行储存
      char *b[n];                   //使用指针数组方便对字符串的排序
      void sort(char *p[m], int k); //定义一个以指针数组维参数的函数
@@ -21,12 +20,12 @@ int main()
           // printf("输入第%d个字符串：\n",i+1);
           scanf("%s", (a + i)); //对多个字符串的输入
           b[i] = *(a + i);
-          printf("%d",sizeof(*(a + i)));       //建立字符串与字符数组的联系
+          printf("%d", sizeof(*(a + i))); //建立字符串与字符数组的联系
      }
      sort(b, n);
      for (i = 0; i < n; i++)
      {
-          printf("%s ",b[i]);
+          printf("%s ", b[i]);
      }
      return 0;
 }

@@ -51,7 +51,7 @@ void output(struct Student *p)
 {
     for(int i=0;i<N;i++)
     {
-        printf("第%d名学号是: %d 名字是: %s 年龄是: %d 身高是: %d\n",i,p[i].num,p[i].name,p[i].age,p[i].height);
+        printf("第%d名学号是: %d 名字是: %s 年龄是: %d 身高是 %d\n",i,p[i].num,p[i].name,p[i].age,p[i].height);
     }
 }
 void sort(struct Student *p)
