@@ -1,7 +1,7 @@
 {
   "configurations": [
     {
-      "cStandard": "c18",
+      "cStandard": "gnu18",
       "compilerPath": "D:\\mingw64\\bin\\gcc.exe",
       "includePath": [
         "${workspaceFolder}/**"

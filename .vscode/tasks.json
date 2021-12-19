@@ -13,10 +13,9 @@
   "tasks": [
     {
       "args": [
-        "-std=c18",
+        "-std=gnu18",
         "-Wall",
         "-fexec-charset=GBK",
-        "-static-libgcc",
         "-g",
         "${file}",
         "-o",
