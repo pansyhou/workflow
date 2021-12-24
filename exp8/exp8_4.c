@@ -42,7 +42,7 @@ int main()
         }
     avg=SetGrade(p, a, b,c, d,e);
     printf("平均成绩=%.2f\n",avg);
-    printf("A:%d B:%d C:%d D:%d E:%d",A,B,C,D,E);
+    printf("A:%d B:%d C:%d D:%d E:%d\n",A,B,C,D,E);
     for(int i=0;i<N;i++)
     {
         printf("第%d名学号是: %d 名字是: %s 成绩是: %d 等级是: %c \n",i,p[i].num,p[i].name,p[i].mark,p[i].grade);

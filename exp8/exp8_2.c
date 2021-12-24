@@ -11,7 +11,7 @@
  * 
  */
 #include <stdio.h>
-#define N 4
+#define N 3
 typedef struct 
 {
     int stu_num;

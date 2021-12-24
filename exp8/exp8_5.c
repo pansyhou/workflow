@@ -34,7 +34,7 @@ void search(Student *p,int *student_Num);
 void statistics(Student *p,int *student_Num);
 void Delay(int nCount)
 {
-  for(; nCount != 0; nCount--);
+  for(; nCount != 0; nCount--);//原理是让cpu计数，空载，cpu算完就算一段延迟
 }
 
 int main()
@@ -45,8 +45,7 @@ int main()
     printf("---------------------如有卡顿请回车一下---------------------\n");
     printf("---------------------有bug也请原谅一下----------------------\n");
     printf("------------------------------------------------------------\n");
-    Delay(0xffffffff);
-    //Delay(0xffffffff);
+    Delay(0xffffffff);//delay延迟
 
     system("cls");
     printf("------------------------------------------------------------\n");
@@ -62,11 +61,11 @@ int main()
     student_Num=&Student_Num;
     Student *p;
     p=&stu;
-    for (int t;t<*student_Num;t++)
+    for (int t;t<*student_Num;t++)//采用多次循环input
     {
       input(t,p,student_Num);
     }
-    //1-增加 2-修改 3-删除 4-浏览 5-查找 6-排序 7-统计
+
     int contral=1;
     system("cls");
     while(1)
@@ -88,7 +87,7 @@ int main()
       {
       case (1):
         add(p,student_Num);
-        system("cls");
+        system("cls");//清楚显示内容函数
         break;
       case (2):
         change(p,student_Num);
@@ -117,7 +116,6 @@ int main()
         system("cls");
         break;
       default:
-        printf("输入的数字不符合规范");
         break;
       }
       system("cls");
@@ -234,6 +232,7 @@ void sort(Student *p,int *student_Num)
               p[temp_Mark]=temp_struct;
           }
           break;
+
         default:
           break;
         }
