@@ -14,25 +14,25 @@ struct student *addmem(struct student *q)
         return q;
 }
 
-int seachTheSame(struct student *head,int num)
+int seachTheSame(struct student *head, int num)
 {
+    int flag=0;
     struct student *current;
-    current=head;
-    int stu=0;
-    while(num!=current->id&&current->next!=NULL)
+    current = head;
+    while ( current->next != NULL)
     {
-        current=current->next;
+        if (num != current->id)
+        {
+            flag= 0;
+        }
+        else
+        {
+            return 1;
+        }
+        current = current->next;
     }
-    if(stu!=current->id)
-    {
-        return 0;
-    }
-    else
-    {
-        return 1;
-    }
+    return flag;
 }
-
 
 void Delay(int nCount)
 {
@@ -40,12 +40,13 @@ void Delay(int nCount)
         ; //原理是让cpu计数，空载，cpu算完就算一段延迟
 }
 
-struct student *addlinker(struct student *head,int i)
+struct student *addlinker(int i)
 {
-    int flag=1;
+    
     struct student *head1 = NULL;
     for (int stuNum; stuNum < i; stuNum++)
     {
+        int flag = 1;
         struct student *prev;
         struct student *current;
         current = addmem(current);
@@ -57,14 +58,14 @@ struct student *addlinker(struct student *head,int i)
         puts("请输入学号、姓名、总成绩(回车结束)");
         do
         {
-        scanf("%d %s %d", &current->id, current->name, &current->sumMark);
-        if(seachTheSame(head,current->id))
-        {
-            puts("已经存在该学生了喔,重新输入吧");
-        }
-        else flag=0;
-        }
-        while(flag);
+            scanf("%d %s %d", &current->id, current->name, &current->sumMark);
+            if (seachTheSame(head1, current->id))
+            {
+                puts("已经存在该学生了喔,重新输入吧");
+            }
+            else
+                flag = 0;
+        } while (flag);
         prev = current; //尾插法 暂存的current正式放入prev
     }
     return head1;
@@ -103,16 +104,16 @@ struct student *cpylinked(struct student *origin)
     return p;
 }
 
-struct student * sortLinked(struct student *head,int stuNum1)
+struct student *sortLinked(struct student *head, int stuNum1)
 {
     struct student *current;
     current = head;
-    for(int i=0;i<stuNum1;i++)
+    for (int i = 0; i < stuNum1; i++)
     {
-        current=head;
-        for(int k=0;k<stuNum1-1;k++)
+        current = head;
+        for (int k = 0; k < stuNum1 - 1; k++)
         {
-            if ((current->sumMark < current->next->sumMark)&&current->next!=NULL)
+            if ((current->sumMark < current->next->sumMark) && current->next != NULL)
             {
                 // student *p=cpylinked(current); //纯傻子了，还想结构互换来着
                 // p->next=current->next;
@@ -152,20 +153,30 @@ void printOneLinker(struct student *object)
 
 struct student *addSinglelinker(struct student *head, int *stuNum1)
 {
-    
+    int flag=1;
     struct student *current;
     struct student *prev;
     struct student *before;
     current = head;
-    prev=addmem(prev);
-    while(current!=NULL)
-    {   before=current;
-        current=current->next;
+    prev = addmem(prev);
+    while (current != NULL)
+    {
+        before = current;
+        current = current->next;
     }
     (*stuNum1)++;
-    before->next=prev;
+    before->next = prev;
     prev->next = NULL;
     puts("请输入学号、姓名、总成绩(回车结束)");
-    scanf("%d %s %d", &prev->id, prev->name, &prev->sumMark);
+    do
+        {
+            scanf("%d %s %d", &prev->id, prev->name, &prev->sumMark);
+            if (seachTheSame(head, prev->id))
+            {
+                puts("已经存在该学生了喔,重新输入吧");
+            }
+            else
+                flag = 0;
+        } while (flag);
     return head;
 }

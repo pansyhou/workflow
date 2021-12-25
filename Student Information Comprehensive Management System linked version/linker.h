@@ -11,7 +11,7 @@ struct student
 
 void Delay(int nCount);
 struct student *addmem(struct student *q);
-struct student *addlinker(struct student *head,int i);
+struct student *addlinker(int i);
 void printAllLinked(struct student *head);
 void killmem(struct student *head);
 struct student * cpylinked(struct student *origin);

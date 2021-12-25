@@ -10,14 +10,16 @@ void sort(void);
 void search(void);
 void statistics(void);
 int startMenu(void);
+void wannasay(void);
 int stuNum = 0;
 struct student *head = NULL;
+
 int main()
 {
     start();
     while (1)
     {
-        if (startMenu()==8)
+        if (startMenu()==9)
     {
         printf("exit successfully!");
         break;
@@ -47,7 +49,7 @@ void start(void)
     // Delay(0xffffffff);
     printf("请输入学生个数:");
     scanf("%d", &stuNum);
-    head = addlinker(head,stuNum);
+    head = addlinker(stuNum);
     system("cls");
 }
 
@@ -62,7 +64,8 @@ int startMenu(void)
     printf("---------------------5-查找学生信息-------------------------\n");
     printf("---------------------6-排序学生信息-------------------------\n");
     printf("---------------------7-统计学生信息-------------------------\n");
-    printf("---------------------8-退出查询系统-------------------------\n");
+    printf("---------------------8-作者想说的话-------------------------\n");
+    printf("---------------------9-退出查询系统-------------------------\n");
     printf("------------------------------------------------------------\n");
     int fun_Num = 0;
     scanf("%d", &fun_Num);
@@ -93,10 +96,14 @@ int startMenu(void)
         head=sortLinked(head,stuNum);
         system("cls");
         break;
-    // case (7):
-        
-    //     system("cls");
-    //     break;
+    case (7):
+        statistics();
+        system("cls");
+        break;
+    case (8):
+        wannasay();
+        system("cls");
+        break;
     default:
         break;
     }
@@ -153,10 +160,9 @@ void delete (void)
         }
         if(stu!=current->id)
         {
-            system("cls");
             printf("没有找到学生信息喔\n");
             puts("输出#以退出");
-        while(getchar()!='#');
+            while(getchar()!='#');
             system("cls");
             return 0;
         }
@@ -199,3 +205,30 @@ void search(void)
     }
     return 0;
 }
+
+void statistics(void)
+{
+    struct student *current;
+    current=head;
+    int sum=0,i=0;
+    while(current->next!=NULL)
+    {
+        sum+=current->sumMark;
+        i++;
+        current=current->next;
+    }
+    double avg=sum/i;
+    printf("平均分= %.2f\n",avg);
+    puts("输出#以退出");
+    while(getchar()!='#');
+}
+
+void wannasay(void)
+{
+    puts("  其实你综合看代码看下来其实会很乱，因为linker,c里写了一些关于链表的操\n作，但是主的c文件zonghe.c又有一些是关于链表的操作，少量，但是也多。\n");
+    puts("  一开始有着对程序架构的完美蓝图，但是在具体写程序的时候你会发现，不\n实际。还是要多加练习，真的就是不熟练，对变量的生命周期一点都不熟悉，调试了两\n个下午，直到周六晚上突破了变量的问题才开始写主函数。\n");
+    puts("  写完这个项目之后不禁感叹，想去搞项目了，只有项目才能摆脱很多坏习惯，比\n如变量名乱写（看我的变量，是不是全是什么head/prev/before/current之类的，虽\n然说方便我移植，但是要是在项目里说不定会被打死，太多重名的了。而且注释也不\n写完全=>\n");
+    puts("输出#以退出");
+    while(getchar()!='#');
+}
+
