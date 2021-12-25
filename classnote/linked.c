@@ -59,3 +59,25 @@ int main()
     return 0;
 }
 
+
+
+struct student *addlinker(int i)
+{
+    int flag=0;
+    struct student *head1 = NULL;
+    for (int stuNum; stuNum < i; stuNum++)
+    {
+        struct student *prev;
+        struct student *current;
+        current = addmem(current);
+        if (head1 == NULL) //将第一部分的结构放入头地址/头结构
+            head1 = current;
+        else //后续的结构地址都会放入
+            prev->next = current;
+        current->next = NULL;
+        puts("请输入学号、姓名、总成绩(回车结束)");
+        scanf("%d %s %d", &current->id, current->name, &current->sumMark);
+        prev = current; //尾插法 暂存的current正式放入prev
+    }
+    return head1;
+}

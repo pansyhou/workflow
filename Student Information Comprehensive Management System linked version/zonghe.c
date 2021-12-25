@@ -3,7 +3,6 @@
 #include <string.h>
 #include "linker.h"
 void start(void);
-void add(void);
 void change(void);
 void delete (void);
 void browse(void);
@@ -18,7 +17,7 @@ int main()
     start();
     while (1)
     {
-        if (startMenu())
+        if (startMenu()==8)
     {
         printf("exit successfully!");
         break;
@@ -48,7 +47,7 @@ void start(void)
     // Delay(0xffffffff);
     printf("请输入学生个数:");
     scanf("%d", &stuNum);
-    head = addlinker(stuNum);
+    head = addlinker(head,stuNum);
     system("cls");
 }
 
@@ -70,32 +69,30 @@ int startMenu(void)
     switch (fun_Num)
     {
     case (1):
-        addSinglelinker(head,stuNum);
+        head=addSinglelinker(head,&stuNum);
         system("cls"); //清楚显示内容函数
-        printAllLinked(head);
-        Delay(0xffffffff);
-        Delay(0xffffffff);
         break;
-    // case (2):
-        
-    //     system("cls");
-    //     break;
-    // case (3):
-        
-    //     system("cls");
-    //     break;
-    // case (4):
-        
-        
-    //     break;
-    // case (5):
-        
-    //     system("cls");
-    //     break;
-    // case (6):
-        
-    //     system("cls");
-    //     break;
+    case (2):
+        change();
+        system("cls");
+        break;
+    case (3):
+        delete();
+        system("cls");
+        break;
+    case (4):
+        printAllLinked(head);
+        puts("输出#以退出");
+        while(getchar()!='#');
+        break;
+    case (5):
+        search();
+        system("cls");
+        break;
+    case (6):
+        head=sortLinked(head,stuNum);
+        system("cls");
+        break;
     // case (7):
         
     //     system("cls");
@@ -105,4 +102,100 @@ int startMenu(void)
     }
     system("cls");
     return fun_Num;
+}
+void change(void)
+{
+    struct student *current;
+    current=head;
+    int stu=0;
+    puts("请输入该学生的学号");
+    scanf("%d",&stu);
+    while(stu!=current->id&&current->next!=NULL)
+    {
+        current=current->next;
+    }
+    if(stu!=current->id)
+    {
+        system("cls");
+        printf("没有找到学生信息喔");
+        Delay(0xffffffff);
+        system("cls");
+        return 0;
+    }
+    else
+    {
+        puts("请输入学号、姓名、总成绩(回车结束)");
+        scanf("%d %s %d", &current->id, current->name, &current->sumMark);
+    }
+    return 0;
+}
+
+void delete (void)
+{
+    struct student *current;
+    struct student *before;
+    current=head;
+    int stu=0;
+    puts("请输入该学生的学号");
+    scanf("%d",&stu);
+    if (head->id==stu)
+    {
+        before=head;
+        head=head->next;
+        free(before);
+    }
+    else
+    {
+        while(stu!=current->id&&current->next!=NULL)
+        {
+            before=current;
+            current=current->next;
+        }
+        if(stu!=current->id)
+        {
+            system("cls");
+            printf("没有找到学生信息喔\n");
+            puts("输出#以退出");
+        while(getchar()!='#');
+            system("cls");
+            return 0;
+        }
+        else
+        {
+            before->next=current->next;
+            free(current);
+        }
+        puts("删除成功!\n");
+        puts("输出#以退出");
+        while(getchar()!='#');
+    }
+}
+
+void search(void)
+{
+    struct student *current;
+    current=head;
+    int stu=0;
+    puts("请输入该学生的学号");
+    scanf("%d",&stu);
+    while(stu!=current->id&&current->next!=NULL)
+    {
+        current=current->next;
+    }
+    if(stu!=current->id)
+    {
+        system("cls");
+        printf("没有找到学生信息喔\n");
+        puts("输出#以退出");
+        while(getchar()!='#');
+        system("cls");
+        return 0;
+    }
+    else
+    {
+        printf("学号: %d\t 姓名: %s\t 总成绩: %d\n", current->id, current->name, current->sumMark);
+        puts("输出#以退出");
+        while(getchar()!='#');
+    }
+    return 0;
 }
