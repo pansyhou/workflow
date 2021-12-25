@@ -1,55 +1,28 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "linker.h"
-
 void start(void);
 void add(void);
 void change(void);
-void delete(void);
+void delete (void);
 void browse(void);
 void sort(void);
 void search(void);
 void statistics(void);
-void Delay(int nCount)
-{
-  for(; nCount != 0; nCount--);//原理是让cpu计数，空载，cpu算完就算一段延迟
-}
-struct student *addmem(struct student *q)
-{
-    q=(struct student *)malloc(sizeof(struct student));
-    if (q==NULL) 
-    {
-        printf("out of memory!");
-        exit(1);
-    }
-    else return q;
-}
-
-void addlinker(struct student *head,struct student *prev,struct student *current)
-{
-    if(head==NULL)//将第一部分的结构放入头地址/头结构
-        head=current;
-    else//后续的结构地址都会放入
-        prev->next=current;
-    current->next=NULL;
-    puts("请输入学号、姓名、总成绩(回车结束)");
-    scanf("%d %s %d",&current->id,current->name,&current->sumMark);
-    prev=current;//尾插法 暂存的current正式放入prev
-}
-
+int startMenu(void);
+int stuNum = 0;
+struct student *head = NULL;
 int main()
 {
-    struct student *head=NULL;
-    struct student *prev;
-    struct student *current;
     start();
-    int stuNum=0;
-    scanf("%d",&stuNum);
-    for(int i=0;i<stuNum;i++)
+    while (1)
     {
-      printf("%d",head);
-      current=(struct student *)malloc(sizeof(struct student));
-      addlinker(head,prev,current);
-      printf("%d",head);
+        if (startMenu())
+    {
+        printf("exit successfully!");
+        break;
+    }
     }
 }
 void start(void)
@@ -72,6 +45,64 @@ void start(void)
     printf("------------------------------------------------------------\n");
     printf("---------------------输入学生信息以开始---------------------\n");
     printf("------------------------------------------------------------\n");
-    //Delay(0xffffffff);
+    // Delay(0xffffffff);
     printf("请输入学生个数:");
+    scanf("%d", &stuNum);
+    head = addlinker(stuNum);
+    system("cls");
+}
+
+int startMenu(void)
+{
+    printf("------------------------------------------------------------\n");
+    printf("-----------------请输入对应数字实现对应功能-----------------\n");
+    printf("---------------------1-增加学生信息-------------------------\n");
+    printf("---------------------2-修改学生信息-------------------------\n");
+    printf("---------------------3-删除学生信息-------------------------\n");
+    printf("---------------------4-浏览学生信息-------------------------\n");
+    printf("---------------------5-查找学生信息-------------------------\n");
+    printf("---------------------6-排序学生信息-------------------------\n");
+    printf("---------------------7-统计学生信息-------------------------\n");
+    printf("---------------------8-退出查询系统-------------------------\n");
+    printf("------------------------------------------------------------\n");
+    int fun_Num = 0;
+    scanf("%d", &fun_Num);
+    switch (fun_Num)
+    {
+    case (1):
+        addSinglelinker(head,stuNum);
+        system("cls"); //清楚显示内容函数
+        printAllLinked(head);
+        Delay(0xffffffff);
+        Delay(0xffffffff);
+        break;
+    // case (2):
+        
+    //     system("cls");
+    //     break;
+    // case (3):
+        
+    //     system("cls");
+    //     break;
+    // case (4):
+        
+        
+    //     break;
+    // case (5):
+        
+    //     system("cls");
+    //     break;
+    // case (6):
+        
+    //     system("cls");
+    //     break;
+    // case (7):
+        
+    //     system("cls");
+    //     break;
+    default:
+        break;
+    }
+    system("cls");
+    return fun_Num;
 }
