@@ -4,7 +4,8 @@
       "cStandard": "gnu18",
       "compilerPath": "D:\\mingw64\\bin\\gcc.exe",
       "includePath": [
-        "${workspaceFolder}/**"
+        "${workspceFolder}/**",
+        "C:/Users/pansy/Desktop/workflow/Student Information Comprehensive Management System linked version"
       ],
       "intelliSenseMode": "windows-gcc-x64",
       "name": "Win32"

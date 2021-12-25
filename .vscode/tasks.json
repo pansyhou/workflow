@@ -17,9 +17,11 @@
         "-Wall",
         "-fexec-charset=GBK",
         "-g",
-        "${file}",
+        "${file}","C:\\Users\\pansy\\Desktop\\workflow\\Student Information Comprehensive Management System linked version\\linker.c",
         "-o",
         "${fileDirname}\\${fileBasenameNoExtension}.exe"
+
+
       ],
       "command": "D:\\mingw64\\bin\\gcc.exe",
       "group": {
