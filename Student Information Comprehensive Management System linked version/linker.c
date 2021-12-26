@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+
+/**
+ * @brief 动态内存分配，入口为指针，返回指针
+ * 
+ * @param q 
+ * @return struct student* 
+ */
 struct student *addmem(struct student *q)
 {
     q = (struct student *)malloc(sizeof(struct student));
@@ -13,6 +20,14 @@ struct student *addmem(struct student *q)
     else
         return q;
 }
+
+/**
+ * @brief 搜索是否含有相同学号
+ * 
+ * @param head 
+ * @param num 
+ * @return int 
+ */
 
 int seachTheSame(struct student *head, int num)
 {
@@ -40,6 +55,13 @@ void Delay(int nCount)
         ; //原理是让cpu计数，空载，cpu算完就算一段延迟
 }
 
+
+/**
+ * @brief 该函数用于一开始的学生信息输入，包含学号查重功能
+ * 
+ * @param i(入口变量为学生人数) 
+ * @return struct student* head
+ */
 struct student *addlinker(int i)
 {
     
@@ -71,6 +93,12 @@ struct student *addlinker(int i)
     return head1;
 }
 
+/**
+ * @brief 打印链表全部节点
+ * 
+ * @param head (入口为头地址)
+ */
+
 void printAllLinked(struct student *head)
 {
     struct student *current = head;
@@ -81,11 +109,18 @@ void printAllLinked(struct student *head)
         puts("这里是学生信息");
         while (current != NULL)
         {
-            printf("学号: %d\t 姓名: %s\t 总成绩: %d\n", current->id, current->name, current->sumMark);
+            printOneLinker(current);
+            //printf("学号: %d\t 姓名: %s\t 总成绩: %d\n", current->id, current->name, current->sumMark);
             current = current->next;
         }
     }
 }
+
+/**
+ * @brief 干掉已经分配的内存
+ * 
+ * @param head 
+ */
 
 void killmem(struct student *head)
 {
@@ -95,7 +130,7 @@ void killmem(struct student *head)
         head = head->next;
     }
 }
-
+/*好像没有用到这个呢*/
 struct student *cpylinked(struct student *origin)
 {
     static struct student *p;
@@ -104,10 +139,19 @@ struct student *cpylinked(struct student *origin)
     return p;
 }
 
+/**
+ * @brief 链表硬排序，以成绩降序为主
+ * 
+ * @param head 
+ * @param stuNum1 
+ * @return struct student* 
+ */
+
 struct student *sortLinked(struct student *head, int stuNum1)
 {
     struct student *current;
     current = head;
+    /*这里没有采用冒泡,因为比较麻烦所以没用，就直接暴力遍历了,直接swap*/
     for (int i = 0; i < stuNum1; i++)
     {
         current = head;
@@ -115,10 +159,6 @@ struct student *sortLinked(struct student *head, int stuNum1)
         {
             if ((current->sumMark < current->next->sumMark) && current->next != NULL)
             {
-                // student *p=cpylinked(current); //纯傻子了，还想结构互换来着
-                // p->next=current->next;
-                // current->next=p;
-
                 /*current copy到temp*/
                 int temp1 = current->id, temp3 = current->sumMark;
                 char temp2[15];
@@ -140,6 +180,13 @@ struct student *sortLinked(struct student *head, int stuNum1)
     return head;
 }
 
+/**
+ * @brief 删除节点函数，原理是让目标节点的上一个节点的next指向目标节点的next，直接无视目标节点
+ * 
+ * @param preDeleteObject 
+ * @param deleteObject 
+ */
+
 void deleteLinker(struct student *preDeleteObject, struct student *deleteObject)
 {
     preDeleteObject->next = deleteObject->next;
@@ -148,9 +195,17 @@ void deleteLinker(struct student *preDeleteObject, struct student *deleteObject)
 
 void printOneLinker(struct student *object)
 {
-    printf("学号: %d/t 姓名: %s/t 总成绩: %d", object->id, object->name, object->sumMark);
+    printf("学号: %d\t 姓名: %s\t 总成绩: %d\n", object->id, object->name, object->sumMark);
 }
 
+
+/**
+ * @brief 添加单个节点在末尾，返回头地址
+ * 
+ * @param head 
+ * @param stuNum1 
+ * @return struct student* head
+ */
 struct student *addSinglelinker(struct student *head, int *stuNum1)
 {
     int flag=1;

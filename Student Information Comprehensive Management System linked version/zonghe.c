@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "linker.h"
+#include "linker.h" //添加自己写的linker头文件
 void start(void);
 void change(void);
 void delete (void);
@@ -12,44 +12,46 @@ void statistics(void);
 int startMenu(void);
 void wannasay(void);
 int stuNum = 0;
-struct student *head = NULL;
+struct student *head = NULL;//head全局变量哦
 
 int main()
 {
     start();
     while (1)
     {
-        if (startMenu()==9)
+        if (startMenu()==9)//startMenu会返回我输入的值，如果为9直接退出
     {
         printf("exit successfully!");
+        killmem(head);
         break;
     }
     }
 }
-void start(void)
+void start(void)//启动画面,包含最开始的学生信息输入
 {
-    // printf("------------------------------------------------------------\n");
-    // printf("-----------------欢迎来到学生信息管理系统V2.0-----------------\n");
-    // printf("---------------------如有卡顿请回车一下---------------------\n");
-    // printf("---------------------有bug也请原谅一下----------------------\n");
-    // printf("------------------------------------------------------------\n");
-    // Delay(0xffffffff);//delay延迟
+    printf("------------------------------------------------------------\n");
+    printf("----------------欢迎来到学生信息管理系统V2.0----------------\n");
+    printf("---------------------如有卡顿请回车一下---------------------\n");
+    printf("---------------------有bug也请原谅一下----------------------\n");
+    printf("---------如果整个文件夹丢进vs或者devc++啥的运行不了---------\n");
+    printf("------------请把linker.c里的函数、头文件丢进zonghe----------\n");
+    printf("------------------------------------------------------------\n");
+    Delay(0xffffffff);//delay延迟
 
-    // system("cls");
-    // printf("------------------------------------------------------------\n");
-    // printf("----------------------V2.0版本更新内容-----------------------\n");
-    // printf("---------------------数据结构更改为链表----------------------\n");
-    // printf("------------------------------------------------------------\n");
-    // Delay(0xffffffff);
+    system("cls");
+    printf("------------------------------------------------------------\n");
+    printf("----------------------V2.0版本更新内容-----------------------\n");
+    printf("---------------------数据结构更改为链表----------------------\n");
+    printf("------------------------------------------------------------\n");
+    Delay(0xffffffff);
 
-    // system("cls");
+    system("cls");
     printf("------------------------------------------------------------\n");
     printf("---------------------输入学生信息以开始---------------------\n");
     printf("------------------------------------------------------------\n");
-    // Delay(0xffffffff);
     printf("请输入学生个数:");
     scanf("%d", &stuNum);
-    head = addlinker(stuNum);
+    head = addlinker(stuNum);//这里=可以右键addlinker看这个函数的声明或者定义
     system("cls");
 }
 
@@ -72,7 +74,7 @@ int startMenu(void)
     switch (fun_Num)
     {
     case (1):
-        head=addSinglelinker(head,&stuNum);
+        head=addSinglelinker(head,&stuNum);//添加单个节点
         system("cls"); //清楚显示内容函数
         break;
     case (2):
@@ -104,7 +106,11 @@ int startMenu(void)
         wannasay();
         system("cls");
         break;
+    case (9):
+        break;
     default:
+        puts("输入信息有误哦");
+        Delay(0xffffffff);
         break;
     }
     system("cls");
@@ -170,6 +176,7 @@ void delete (void)
         {
             before->next=current->next;
             free(current);
+            (stuNum)--;
         }
         puts("删除成功!\n");
         puts("输出#以退出");
@@ -199,7 +206,7 @@ void search(void)
     }
     else
     {
-        printf("学号: %d\t 姓名: %s\t 总成绩: %d\n", current->id, current->name, current->sumMark);
+        printOneLinker(current);
         puts("输出#以退出");
         while(getchar()!='#');
     }
@@ -225,9 +232,9 @@ void statistics(void)
 
 void wannasay(void)
 {
-    puts("  其实你综合看代码看下来其实会很乱，因为linker,c里写了一些关于链表的操\n作，但是主的c文件zonghe.c又有一些是关于链表的操作，少量，但是也多。\n");
+    puts("  其实你综合看代码看下来其实会很乱，因为linker,c里写了一些关于链表的操作，但是\n主的c文件zonghe.c又有一些是关于链表的操作，少量，但是也多。\n");
     puts("  一开始有着对程序架构的完美蓝图，但是在具体写程序的时候你会发现，不\n实际。还是要多加练习，真的就是不熟练，对变量的生命周期一点都不熟悉，调试了两\n个下午，直到周六晚上突破了变量的问题才开始写主函数。\n");
-    puts("  写完这个项目之后不禁感叹，想去搞项目了，只有项目才能摆脱很多坏习惯，比\n如变量名乱写（看我的变量，是不是全是什么head/prev/before/current之类的，虽\n然说方便我移植，但是要是在项目里说不定会被打死，太多重名的了。而且注释也不\n写完全=>\n");
+    puts("  写完这个项目之后不禁感叹，想去搞项目了，只有项目才能摆脱很多坏习惯，比\n如变量名乱写（看我的变量，是不是全是什么head/prev/before/current之类的，虽\n然说方便我移植，但是要是在项目里说不定会被打死，太多重名的了。而且注释也不\n写完全=>   By pansyhou.\n");
     puts("输出#以退出");
     while(getchar()!='#');
 }
