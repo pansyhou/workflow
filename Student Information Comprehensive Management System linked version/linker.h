@@ -1,3 +1,13 @@
+/************************** Dongguan-University of Technology -ACE**************************
+ * @file linker.h
+ * @author pansyhou侯文辉 (1677195845lyb@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2022-01-25
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+************************** Dongguan-University of Technology -ACE************************** */
 #ifndef __LINKER_H
 #define __LINKER_H
 

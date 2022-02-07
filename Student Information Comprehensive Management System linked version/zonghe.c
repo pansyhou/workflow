@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include "linker.h" //添加自己写的linker头文件
+
+//对了！！！！如果只运行这个zonghe.c的话可能运行不了，直接打开exe看我的说明
+
+
+
 void start(void);
 void change(void);
 void delete (void);
@@ -11,6 +16,7 @@ void search(void);
 void statistics(void);
 int startMenu(void);
 void wannasay(void);
+void saveData(void);
 int stuNum = 0;
 struct student *head = NULL;//head全局变量哦
 
@@ -22,6 +28,7 @@ int main()
         if (startMenu()==9)//startMenu会返回我输入的值，如果为9直接退出
     {
         printf("exit successfully!");
+        saveData();
         killmem(head);
         break;
     }
@@ -40,8 +47,10 @@ void start(void)//启动画面,包含最开始的学生信息输入
 
     system("cls");
     printf("------------------------------------------------------------\n");
-    printf("----------------------V2.0版本更新内容-----------------------\n");
-    printf("---------------------数据结构更改为链表----------------------\n");
+    printf("----------------------V2.0版本更新内容----------------------\n");
+    printf("---------------------数据结构更改为链表---------------------\n");
+    printf("-------------------支持数据导出至data.txt-------------------\n");
+
     printf("------------------------------------------------------------\n");
     Delay(0xffffffff);
 
@@ -67,7 +76,7 @@ int startMenu(void)
     printf("---------------------6-排序学生信息-------------------------\n");
     printf("---------------------7-统计学生信息-------------------------\n");
     printf("---------------------8-作者想说的话-------------------------\n");
-    printf("---------------------9-退出查询系统-------------------------\n");
+    printf("----------------9-退出查询系统并保存数据--------------------\n");
     printf("------------------------------------------------------------\n");
     int fun_Num = 0;
     scanf("%d", &fun_Num);
@@ -118,6 +127,7 @@ int startMenu(void)
 }
 void change(void)
 {
+    int flag = 1;
     struct student *current;
     current=head;
     int stu=0;
@@ -239,3 +249,23 @@ void wannasay(void)
     while(getchar()!='#');
 }
 
+void saveData(void)
+{
+    struct student *current;
+    current=head;
+    FILE *fp;
+    int i;
+    fp=fopen("data.txt","w");
+    if(fp==NULL)
+    {
+        printf("文件打开失败...");
+        exit (0);
+    }
+
+    for(i=0;i<stuNum;i++)
+    {
+        fprintf(fp,"学号: %d\t 姓名: %s\t 总成绩: %d\n", current->id, current->name, current->sumMark);
+        current=current->next;
+    }
+    fclose(fp); 
+}

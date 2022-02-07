@@ -1,6 +1,13 @@
 {
   "configurations": [
     {
+      "type": "java",
+      "name": "Launch HelloWorldApp",
+      "request": "launch",
+      "mainClass": "java.HelloWorldApp",
+      "projectName": "workflow_46703ffd"
+    },
+    {
       "MIMode": "gdb",
       "args": [],
       "cwd": "${fileDirname}",
