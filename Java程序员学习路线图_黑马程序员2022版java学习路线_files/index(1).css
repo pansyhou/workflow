@@ -1,0 +1,131 @@
+.divFooter .divBody {
+  height: 228px;
+  background-color: #3d4553;
+}
+.divFooter .divBody .divContainer {
+  width: 1102px;
+  height: 167px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.divFooter .divBody .divContainer .divLeft {
+  float: left;
+}
+.divFooter .divBody .divContainer .divLeft .divTitle .spanTitle {
+  height: 28px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 1px;
+}
+.divFooter .divBody .divContainer .divLeft .divTitle .spanTitle a {
+  color: #fff !important;
+}
+.divFooter .divBody .divContainer .divLeft .divTitle .spanTitle .spanSplit {
+  width: 1px;
+  height: 13px;
+  display: inline-block;
+  background-color: #979797;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 1px;
+}
+.divFooter .divBody .divContainer .divLeft .divTitle .divLinkArr1 span {
+  margin-left: 30px;
+  padding: 4px 8px;
+  background: #484f5d;
+  border-radius: 4px;
+}
+.divFooter .divBody .divContainer .divLeft .divTitle .divLinkArr1 span a {
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 0.6;
+}
+.divFooter .divBody .divContainer .divLeft .divContact {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.divFooter .divBody .divContainer .divLeft .divContact .spanDesc {
+  height: 22px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 22px;
+  letter-spacing: 1px;
+}
+.divFooter .divBody .divContainer .divLeft .divContact .spanTime {
+  font-size: 12px;
+  font-weight: 400;
+  color: #75787d;
+}
+.divFooter .divBody .divContainer .divLeft .divDetail .el-row {
+  height: 20px;
+  margin-top: 6px;
+}
+.divFooter .divBody .divContainer .divLeft .divDetail .el-row .el-col {
+  font-size: 14px;
+  font-weight: 400;
+  color: #a7aab1;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+.divFooter .divBody .divContainer .divLeft .divDetail .el-row .el-col .imgQQ {
+  width: 13px;
+  height: 16px;
+}
+.divFooter .divBody .divContainer .divLeft .divDetail .el-row .el-col .spanLink {
+  cursor: pointer;
+}
+.divFooter .divBody .divContainer .divLeft .divFriendLink {
+  margin-top: 20px;
+}
+.divFooter .divBody .divContainer .divLeft .divFriendLink .spanTitle {
+  height: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+.divFooter .divBody .divContainer .divLeft .divFriendLink a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #a7aab1;
+  line-height: 20px;
+  letter-spacing: 1px;
+  margin-left: 30px;
+}
+.divFooter .divBody .divContainer .divRight {
+  float: right;
+}
+.divFooter .divBody .divContainer .divRight img {
+  width: 129px;
+  height: 129px;
+  margin-top: 5px;
+}
+.divFooter .divBody .divContainer .divRight .divDesc {
+  height: 17px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 17px;
+  margin-top: 10px;
+  text-align: center;
+}
+.divFooter .divBottom {
+  height: 36px;
+  width: 100%;
+  background-color: #e2e9f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #3f4e67;
+}
+.divFooter .divBottom div .a_split {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #3f4e67;
+}

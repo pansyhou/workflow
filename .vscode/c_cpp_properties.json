@@ -1,11 +1,10 @@
 {
   "configurations": [
     {
-      "cStandard": "gnu18",
-      "compilerPath": "D:\\mingw64\\bin\\gcc.exe",
+      "cStandard": "c18",
+      "compilerPath": "E:\\Application\\mingw64\\bin\\gcc.exe",
       "includePath": [
-        "${workspceFolder}/**",
-        "C:/Users/pansy/Desktop/workflow/Student Information Comprehensive Management System linked version"
+        "${workspaceFolder}/**"
       ],
       "intelliSenseMode": "windows-gcc-x64",
       "name": "Win32"

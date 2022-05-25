@@ -1,7 +1,7 @@
 {
   "options": {
     "env": {
-      "Path": "D:\\mingw64\\bin;${env:Path}"
+      "Path": "E:\\Application\\mingw64\\bin;${env:Path}"
     },
     "shell": {
       "args": [
@@ -13,17 +13,14 @@
   "tasks": [
     {
       "args": [
-        "-std=gnu18",
-        "-Wall",
+        "-std=c18",
         "-fexec-charset=GBK",
         "-g",
-        "${file}","C:\\Users\\pansy\\Desktop\\workflow\\Student Information Comprehensive Management System linked version\\linker.c",
+        "${file}",
         "-o",
         "${fileDirname}\\${fileBasenameNoExtension}.exe"
-
-
       ],
-      "command": "D:\\mingw64\\bin\\gcc.exe",
+      "command": "E:\\Application\\mingw64\\bin\\gcc.exe",
       "group": {
         "isDefault": true,
         "kind": "build"
@@ -47,7 +44,7 @@
         "ByPass",
         "-NoProfile",
         "-File",
-        "D:\\mingw64\\bin\\pause-console.ps1",
+        "E:\\Application\\mingw64\\bin\\pause-console.ps1",
         "${fileDirname}\\${fileBasenameNoExtension}.exe"
       ],
       "command": "START",
@@ -70,7 +67,7 @@
         "ByPass",
         "-NoProfile",
         "-File",
-        "D:\\mingw64\\bin\\check-ascii.ps1",
+        "E:\\Application\\mingw64\\bin\\check-ascii.ps1",
         "${fileDirname}\\${fileBasenameNoExtension}.exe"
       ],
       "command": "C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
