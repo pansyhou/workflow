@@ -1,0 +1,26 @@
+﻿  Demo.c
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\demo.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h(299): error C2001: 常量中有换行符
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h(300): error C2143: 语法错误 : 缺少“)”(在“for”的前面)
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h(300): warning C4018: “<”: 有符号/无符号不匹配
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h(300): warning C4552: “<”: 运算符不起任何作用；应输入带副作用的运算符
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h(300): error C2143: 语法错误 : 缺少“;”(在“)”的前面)
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h(304): error C2001: 常量中有换行符
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h(304): error C2143: 语法错误 : 缺少“)”(在“字符串”的前面)
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h(304): error C2143: 语法错误 : 缺少“{”(在“字符串”的前面)
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h(304): error C2059: 语法错误:“<未知>”
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h(305): error C2143: 语法错误 : 缺少“{”(在“<”的前面)
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h(305): error C2059: 语法错误:“<”
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h(305): error C2143: 语法错误 : 缺少“{”(在“++”的前面)
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h(305): error C2059: 语法错误:“++”
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h(305): error C2059: 语法错误:“)”
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\bitree.h(309): error C2059: 语法错误:“}”
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\demo.c(20): error C2001: 常量中有换行符
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\demo.c(22): error C2001: 常量中有换行符
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\demo.c(24): error C2001: 常量中有换行符
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\demo.c(30): error C2001: 常量中有换行符
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\demo.c(44): error C2001: 常量中有换行符
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\demo.c(46): error C2001: 常量中有换行符
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\demo.c(48): error C2001: 常量中有换行符
+d:\桌面图标\文档\数据结构实验\编写作业\bitree2\bitree\demo.c(54): error C2001: 常量中有换行符
